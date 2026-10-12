@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Our Love Story · تاريخنا الخاص</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Reem+Kufi:wght@400;600;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            min-height: 100vh;
+            /* 🌹 خلفية جديدة: تدرج دافئ Rose Gold */
+            background: 
+                radial-gradient(ellipse at top left, #ffe0e5 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, #ffd4c8 0%, transparent 50%),
+                radial-gradient(ellipse at top right, #fff5e8 0%, transparent 50%),
+                linear-gradient(160deg, #fff9f5 0%, #ffeef0 30%, #fce4dc 60%, #f8d6cc 100%);
+            background-attachment: fixed;
+            font-family: 'Amiri', 'Playfair Display', serif;
+            color: #5e3e3a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ✨ طبقة توهج علوية */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 200, 200, 0.35) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 80%, rgba(255, 220, 190, 0.3) 0%, transparent 40%);
+            animation: glowMove 20s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes glowMove {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(3%, 3%) rotate(5deg); }
+        }
+
+        /* ---------- BACKGROUND EFFECTS ---------- */
+        .background-effects {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none; z-index: 1; overflow: hidden;
+        }
+
+        /* قلوب عائمة */
+        .heart {
+            position: absolute;
+            opacity: 0.4;
+            animation: floatHeart linear infinite;
+            user-select: none;
+            filter: drop-shadow(0 0 10px rgba(255, 180, 180, 0.8));
+            will-change: transform, opacity;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(110vh) rotate(0deg) scale(0.7); opacity: 0.1; }
+            20% { opacity: 0.55; }
+            80% { opacity: 0.55; }
+            100% { transform: translateY(-20vh) rotate(360deg) scale(1.3); opacity: 0; }
+        }
+
+        /* دوائر bokeh */
+        .bokeh {
+            position: absolute;
+            border-radius: 50%;
+            animation: pulseBokeh 10s infinite alternate ease-in-out;
+            mix-blend-mode: soft-light;
+        }
+
+        @keyframes pulseBokeh {
+            0% { opacity: 0.15; transform: scale(0.8); }
+            100% { opacity: 0.65; transform: scale(1.4); }
+        }
+
+        /* ✨ نجوم متلألئة */
+        .sparkle {
+            position: absolute;
+            color: #fff;
+            font-size: 0.9rem;
+            text-shadow: 0 0 8px #ffd0c0, 0 0 16px #ffb8a8, 0 0 24px #ffa890;
+            animation: twinkle 3s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* ---------- MAIN WRAPPER ---------- */
+        .story-wrapper {
+            position: relative; z-index: 10;
+            max-width: 1100px; width: 100%;
+            display: flex; flex-direction: column;
+            gap: 2.5rem;
+            /* كارت زجاجي شفاف */
+            background: rgba(255, 250, 248, 0.45);
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            border-radius: 3rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 
+                0 30px 60px rgba(200, 140, 130, 0.2), 
+                0 10px 25px rgba(255, 180, 170, 0.15),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 220, 210, 0.7);
+        }
+
+        /* ---------- HEADER ---------- */
+        .header-section {
+            text-align: center;
+            display: flex; flex-direction: column;
+            align-items: center; gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #eac7c0;
+        }
+
+        h1 {
+            font-family: 'Aref Ruqaa', 'Amiri', serif;
+            font-weight: 700;
+            font-size: clamp(2.6rem, 9vw, 4.5rem);
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #b06b6b 0%, #d9958c 50%, #b06b6b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 6px 16px rgba(255, 190, 180, 0.7));
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+
+        .sub-date {
+            font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+            font-family: 'Reem Kufi', 'Amiri', serif;
+            color: #b37b7b;
+            background: rgba(255, 245, 240, 0.8);
+            padding: 0.6rem 2.2rem;
+            border-radius: 60px;
+            display: inline-block;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 6px 14px rgba(180, 120, 110, 0.15);
+            border: 1px solid #ffdbd0;
+            letter-spacing: 1px;
+        }
+
+        /* ---------- COUNTDOWN ---------- */
+        .countdown-container {
+            display: flex; flex-wrap: wrap;
+            justify-content: center; align-items: center;
+            gap: 1rem 2rem;
+            background: rgba(255, 252, 250, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.4rem 2.2rem;
+            border-radius: 4rem;
+            margin-top: 0.8rem;
+            border: 1px solid #ffe2d6;
+            box-shadow: 0 12px 24px rgba(200, 150, 140, 0.15), inset 0 1px 3px rgba(255,255,255,0.9);
+        }
+
+        .timer-item {
+            display: flex; flex-direction: column;
+            align-items: center; min-width: 70px;
+        }
+
+        .timer-number {
+            font-size: 2.3rem; font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(145deg, #c07a7a, #a04d4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            filter: drop-shadow(0 2px 4px rgba(255, 200, 190, 0.8));
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #b28b8b;
+            font-family: 'Reem Kufi', sans-serif;
+        }
+
+        .days-together {
+            font-size: 1.1rem; margin-top: 0.4rem;
+            color: #9e6b6b;
+            font-family: 'Reem Kufi', serif;
+            background: #fff3ee;
+            padding: 0.5rem 1.6rem;
+            border-radius: 30px;
+            display: inline-block;
+            border: 1px dashed #ffc8b8;
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- SPECIAL DATES ---------- */
+        .special-dates {
+            background: rgba(255, 252, 250, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 2.5rem;
+            padding: 2.2rem 1.8rem;
+            border: 1px solid rgba(255, 225, 215, 0.9);
+            box-shadow: 0 18px 35px -12px rgba(190, 130, 120, 0.28), inset 0 1px 4px rgba(255, 255, 255, 0.9);
+        }
+
+        .dates-title {
+            text-align: center;
+            font-family: 'Reem Kufi', 'Amiri', serif;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            color: #9a6b6b;
+            margin-bottom: 1.8rem;
+            letter-spacing: 1px;
+            display: flex; align-items: center;
+            justify-content: center; gap: 15px;
+        }
+
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.3rem;
+        }
+
+        .date-card {
+            background: linear-gradient(145deg, #fffcf9, #fff2ec);
+            border-radius: 1.8rem;
+            padding: 1.6rem 1.2rem;
+            text-align: center;
+            border: 1px solid #ffe0d4;
+            box-shadow: 0 10px 20px rgba(220, 160, 150, 0.18), inset 0 2px 6px rgba(255, 255, 255, 0.9);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative; overflow: hidden;
+        }
+
+        .date-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 35px rgba(200, 130, 120, 0.3), inset 0 2px 6px rgba(255, 255, 255, 1);
+        }
+
+        .date-icon {
+            font-size: 2.6rem; margin-bottom: 0.7rem;
+            display: inline-block;
+            filter: drop-shadow(0 4px 8px rgba(255, 160, 150, 0.4));
+            animation: gentleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .date-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem; font-weight: 700;
+            color: #b06868;
+            margin-bottom: 0.4rem;
+            letter-spacing: 2px;
+            direction: ltr;
+        }
+
+        .date-time {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem; color: #c48a8a;
+            font-weight: 600; margin-bottom: 0.6rem;
+            direction: ltr;
+        }
+
+        .date-desc {
+            font-family: 'Reem Kufi', 'Amiri', serif;
+            font-size: 1.05rem; color: #7a5550;
+            line-height: 1.8;
+        }
+
+        .date-card.highlight {
+            background: linear-gradient(145deg, #ffe4dc, #ffd4c8);
+            border: 1px solid #ffc2b0;
+            box-shadow: 0 14px 28px rgba(220, 140, 130, 0.32), inset 0 2px 6px rgba(255, 255, 255, 1);
+        }
+
+        .date-card.highlight .date-value { color: #a04d4d; }
+        .date-card.highlight .date-icon {
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.15); }
+            50% { transform: scale(1.05); }
+            75% { transform: scale(1.18); }
+        }
+
+        /* ============================================ */
+        /* ---------- LOVE LETTER SECTION ---------- */
+        /* ============================================ */
+
+        .love-letter-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .letter-ornament {
+            text-align: center;
+            font-size: 1.6rem;
+            color: #d9958c;
+            letter-spacing: 14px;
+            opacity: 0.75;
+            margin: 0.5rem 0;
+        }
+
+        .letter-card {
+            background: linear-gradient(145deg, rgba(255, 253, 250, 0.9), rgba(255, 246, 240, 0.8));
+            backdrop-filter: blur(14px);
+            border-radius: 3rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 
+                0 25px 50px -15px rgba(190, 130, 120, 0.35),
+                inset 0 1px 4px rgba(255, 255, 255, 0.95),
+                inset 0 -2px 10px rgba(255, 220, 210, 0.5);
+            border: 1px solid rgba(255, 225, 215, 0.9);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter-card::before {
+            content: "💌";
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2.8rem;
+            opacity: 0.3;
+            transform: rotate(15deg);
+            pointer-events: none;
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+
+        .letter-card::after {
+            content: "🌹";
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 2.5rem;
+            opacity: 0.25;
+            transform: rotate(-15deg);
+            pointer-events: none;
+            animation: gentleFloat 5s ease-in-out infinite reverse;
+        }
+
+        .letter-heading {
+            text-align: center;
+            font-family: 'Aref Ruqaa', 'Reem Kufi', serif;
+            font-size: clamp(1.7rem, 5.5vw, 2.3rem);
+            margin-bottom: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, #b06b6b, #d9958c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 3px 8px rgba(255, 190, 180, 0.5));
+        }
+
+        .letter-heading::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ffb8a8, transparent);
+            margin: 1rem auto 0;
+        }
+
+        .opening-quote {
+            font-family: 'Amiri', serif;
+            font-size: clamp(1.3rem, 4.2vw, 1.7rem);
+            line-height: 2.1;
+            color: #7a4d4d;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding: 1.5rem 1.2rem;
+            border-radius: 1.8rem;
+            background: linear-gradient(145deg, rgba(255, 230, 220, 0.75), rgba(255, 245, 240, 0.55));
+            border: 1px dashed #ffc8b8;
+            position: relative;
+            z-index: 2;
+            box-shadow: inset 0 2px 8px rgba(255, 210, 200, 0.3);
+        }
+
+        .opening-quote::before {
+            content: "❝";
+            font-size: 3.5rem;
+            color: #ffb8a8;
+            position: absolute;
+            top: -12px;
+            right: 18px;
+            opacity: 0.6;
+            font-family: serif;
+        }
+
+        .opening-quote::after {
+            content: "❞";
+            font-size: 3.5rem;
+            color: #ffb8a8;
+            position: absolute;
+            bottom: -25px;
+            left: 18px;
+            opacity: 0.6;
+            font-family: serif;
+        }
+
+        .letter-text {
+            font-family: 'Amiri', serif;
+            font-size: clamp(1.15rem, 3.6vw, 1.4rem);
+            line-height: 2.3;
+            color: #5e4240;
+            text-align: right;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+        }
+
+        .letter-text p {
+            margin-bottom: 1.4rem;
+            padding: 0.8rem 1.2rem 0.8rem 0.5rem;
+            border-right: 3px solid transparent;
+            border-radius: 0 12px 12px 0;
+            transition: all 0.4s ease;
+        }
+
+        .letter-text p:hover {
+            border-right-color: #ffb8a8;
+            background: linear-gradient(to left, rgba(255, 235, 230, 0.6), transparent);
+            transform: translateX(-4px);
+        }
+
+        .letter-text p:last-child { margin-bottom: 0; }
+
+        .soft-highlight {
+            color: #b04d5b;
+            font-weight: 700;
+            background: linear-gradient(to bottom, transparent 55%, rgba(255, 200, 190, 0.5) 55%);
+            padding: 0 4px;
+            font-family: 'Reem Kufi', 'Amiri', serif;
+            transition: all 0.3s ease;
+        }
+
+        .soft-highlight:hover {
+            background: linear-gradient(to bottom, transparent 40%, rgba(255, 180, 170, 0.7) 40%);
+            color: #a03d4d;
+        }
+
+        .letter-signature {
+            text-align: left;
+            margin-top: 2.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #ffc8b8;
+            font-family: 'Reem Kufi', 'Amiri', serif;
+            color: #b06868;
+            font-size: clamp(1.1rem, 3.6vw, 1.3rem);
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+        }
+
+        .letter-signature .sig-name {
+            font-family: 'Aref Ruqaa', 'Reem Kufi', serif;
+            font-size: 1.6em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #b06b6b, #d9958c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-top: 0.5rem;
+            letter-spacing: 2px;
+            filter: drop-shadow(0 2px 6px rgba(255, 180, 170, 0.6));
+        }
+
+        .heart-big {
+            font-size: 1.5em;
+            display: inline-block;
+            animation: heartBeat 1.5s ease-in-out infinite;
+            vertical-align: middle;
+            margin: 0 4px;
+            filter: drop-shadow(0 3px 6px rgba(255, 100, 100, 0.4));
+        }
+
+        /* ---------- GALLERY ---------- */
+        .gallery-title {
+            font-size: 1.9rem; text-align: center;
+            color: #9a6b6b;
+            font-family: 'Reem Kufi', serif;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+            display: flex; align-items: center;
+            justify-content: center; gap: 15px;
+        }
+
+        .photo-gallery {
+            display: flex; flex-wrap: wrap;
+            justify-content: center; align-items: center;
+            gap: 1.8rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .polaroid {
+            background: #fffaf5;
+            padding: 0.9rem 0.9rem 2.2rem;
+            box-shadow: 0 20px 25px -10px rgba(150, 100, 90, 0.3), 0 0 0 1px #ffe1d6, 0 0 0 5px #fffbf8;
+            border-radius: 0.5rem;
+            transform: rotate(var(--rot, 0deg));
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 170px;
+            display: flex; flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.07);
+            box-shadow: 0 30px 40px -10px #b68b7e;
+            z-index: 5;
+        }
+
+        .polaroid.featured {
+            width: 240px;
+            background: linear-gradient(145deg, #fffdfa, #fff5ef);
+            box-shadow: 
+                0 30px 45px -12px rgba(180, 120, 110, 0.5), 
+                0 0 0 2px #ffd8c8, 
+                0 0 0 8px #fffbf8,
+                0 0 60px rgba(255, 180, 170, 0.4);
+        }
+
+        .polaroid.featured:hover {
+            box-shadow: 
+                0 35px 55px -12px rgba(180, 120, 110, 0.6), 
+                0 0 0 2px #ffc8b0, 
+                0 0 0 8px #fffbf8,
+                0 0 80px rgba(255, 180, 170, 0.6);
+        }
+
+        .polaroid-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(135deg, #fde2d8, #ffd9cf);
+            border-radius: 0.25rem;
+            display: flex; align-items: center;
+            justify-content: center;
+            font-size: 3rem; color: #d9a79e;
+            box-shadow: inset 0 0 20px rgba(255, 220, 200, 0.6);
+            overflow: hidden;
+            border: 1px solid #ffcfc0;
+            position: relative;
+        }
+
+        .polaroid-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .polaroid:hover .polaroid-img img {
+            transform: scale(1.1);
+        }
+
+        .polaroid-caption {
+            font-family: 'Amiri', serif;
+            margin-top: 0.8rem;
+            color: #aa7e7e;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .polaroid.featured .polaroid-caption {
+            font-family: 'Aref Ruqaa', 'Reem Kufi', serif;
+            font-weight: 700;
+            color: #a86060;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        .love-note {
+            position: absolute;
+            bottom: -6px; left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: #ffd9d0;
+            color: #8a5e5e;
+            padding: 0.3rem 1.1rem;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            white-space: nowrap;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 10px rgba(180, 120, 110, 0.3);
+            border: 1px solid #ffbcac;
+            pointer-events: none;
+        }
+
+        .polaroid:hover .love-note {
+            transform: translateX(-50%) scale(1);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -14px; right: -12px;
+            background: linear-gradient(145deg, #ff9b9b, #ff7a7a);
+            color: #fff;
+            font-family: 'Reem Kufi', serif;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 30px;
+            box-shadow: 0 5px 14px rgba(255, 100, 100, 0.5);
+            z-index: 3;
+            transform: rotate(-8deg);
+            border: 2px solid #fff;
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer-note {
+            text-align: center;
+            font-family: 'Reem Kufi', serif;
+            color: #bc9494;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 0.8rem; }
+            .story-wrapper { padding: 2rem 1.2rem; gap: 1.8rem; border-radius: 2rem; }
+            .letter-card { padding: 2rem 1.4rem; border-radius: 2rem; }
+            .letter-text { font-size: 1.1rem; line-height: 2.1; }
+            .letter-text p { padding: 0.6rem 0.8rem 0.6rem 0.3rem; margin-bottom: 1rem; }
+            .opening-quote { font-size: 1.2rem; padding: 1.2rem 0.9rem; }
+            .countdown-container { gap: 0.7rem 1.2rem; padding: 1.1rem 1rem; }
+            .timer-item { min-width: 55px; }
+            .timer-number { font-size: 1.8rem; }
+            .polaroid { width: 130px; padding: 0.6rem 0.6rem 1.8rem; }
+            .polaroid.featured { width: 185px; }
+            .polaroid-caption { font-size: 0.85rem; }
+            .polaroid.featured .polaroid-caption { font-size: 1.1rem; }
+            .dates-grid { grid-template-columns: 1fr; }
+            .date-value { font-size: 1.4rem; }
+            .special-dates { padding: 1.5rem 1rem; }
+            .letter-ornament { font-size: 1.2rem; letter-spacing: 8px; }
+            .letter-card::before, .letter-card::after { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-effects" id="backgroundEffects"></div>
+
+    <main class="story-wrapper">
+        
+        <!-- HEADER -->
+        <header class="header-section">
+            <h1>تاريخنا الخاص</h1>
+            <div class="sub-date">١٥ مارس · ١:٣٩ ص · أحلى يوم في حياتي</div>
+            
+            <div class="countdown-container">
+                <div class="timer-item">
+                    <span class="timer-number" id="days">00</span>
+                    <span class="timer-label">يوم</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="hours">00</span>
+                    <span class="timer-label">ساعة</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="minutes">00</span>
+                    <span class="timer-label">دقيقة</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="seconds">00</span>
+                    <span class="timer-label">ثانية</span>
+                </div>
+            </div>
+            <div class="days-together" id="daysTogetherMessage">منذ ٠ يوم · كل لحظة حب</div>
+        </header>
+
+        <!-- SPECIAL DATES -->
+        <section class="special-dates">
+            <div class="dates-title">
+                <span>📅</span> تواريخ غالية على قلبي <span>📅</span>
+            </div>
+            <div class="dates-grid">
+                <div class="date-card highlight">
+                    <div class="date-icon">🎂❤️</div>
+                    <div class="date-value">15 / 03</div>
+                    <div class="date-time">1 : 39</div>
+                    <div class="date-desc">
+                        عيد ميلادنا احنا الاتنين<br>
+                        وأحلى يوم في حياتي 🌏
+                    </div>
+                </div>
+                <div class="date-card">
+                    <div class="date-icon">👀✨</div>
+                    <div class="date-value">02 / 06</div>
+                    <div class="date-desc">
+                        أول يوم شوفتك فيه<br>
+                        وقلبي عرف طريقه 🥺
+                    </div>
+                </div>
+                <div class="date-card">
+                    <div class="date-icon">🌱💗</div>
+                    <div class="date-value">10 / 06</div>
+                    <div class="date-desc">
+                        اليوم اللي اتولدت فيه<br>
+                        من جديد بحبك 🥺
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ---------- LOVE LETTER SECTION ---------- -->
+        <!-- ============================================ -->
+        <section class="love-letter-section">
+            
+            <div class="letter-ornament">✦ ❤ ✦ ❤ ✦</div>
+
+            <div class="letter-card">
+                <h2 class="letter-heading">💌 رسالة من قلبي 💌</h2>
+
+                <div class="opening-quote">
+                    «عايز أقولك إنك مش مجرد بنت بحبها... <br>
+                    إنتي الحياة اللي اتمنيتها من سنين»
+                </div>
+
+                <div class="letter-text">
+                    <p>
+                        إنتي <span class="soft-highlight">الحلم</span> اللي صحيت عليه ولقيته قدامي، 
+                        إنتي <span class="soft-highlight">الأمان</span> اللي قلبي ارتاح فيه، 
+                        والدفا اللي بحس بيه. إنتي أجمل من كل الكلام اللي بيتقال، 
+                        وأحن من كل حضن اتخيلته. إنتي مش بس حبيبتي... 
+                        إنتي <span class="soft-highlight">دنيتي</span>، إنتي أخت روحي، 
+                        إنتي ملاكي اللي ربنا بعتهولي. 🌏
+                    </p>
+
+                    <p>
+                        من أول ما عرفتك وأنا مش زي زمان، كل حاجة بقت ليها طعم تاني. 
+                        الضحكة بقت من القلب، والدنيا بقت فيها أمل. 
+                        بقيت بصحى وأنا مبسوط عشان إنتي في حياتي، 
+                        بقيت بحب اليوم اللي بيعدي وإنتي فيه. 
+                        بقيت بضحك على حاجات بسيطة لأن وجودك بيكفيني، 
+                        بقيت بدعي من قلبي إنك تفضلي معايا العمر كله. ❤️
+                    </p>
+
+                    <p>
+                        إنتي اللي غيرتيني للأحسن، إنتي اللي خلتيني أعرف يعني إيه 
+                        <span class="soft-highlight">حب حقيقي</span>.
